@@ -1,0 +1,45 @@
+{
+  "name": "account-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon main",
+    "prisma:seed": "node prisma/seed.js"
+  },
+  "keywords": [
+    "Accounts"
+  ],
+  "author": "Shaheryar, Ajeel",
+  "license": "ISC",
+  "dependencies": {
+    "@clerk/clerk-js": "^4.70.5",
+    "@clerk/clerk-sdk-node": "^4.13.11",
+    "@prisma/client": "^5.18.0",
+    "account-backend": "file:",
+    "bcrypt": "^5.1.1",
+    "compression": "^1.7.4",
+    "cookie-parser": "^1.4.6",
+    "cookies": "^0.9.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-rate-limit": "^7.4.0",
+    "express-validator": "^7.2.0",
+    "helmet": "^7.1.0",
+    "html-to-text": "^9.0.5",
+    "jsonwebtoken": "^9.0.2",
+    "morgan": "^1.10.0",
+    "nodemailer": "^6.9.14",
+    "path": "^0.12.7",
+    "pug": "^3.0.3",
+    "util": "^0.12.5",
+    "winston": "^3.13.0",
+    "xss-clean": "^0.1.4"
+  },
+  "devDependencies": {
+    "@prisma/extension-optimize": "^0.10.1",
+    "prisma": "^5.18.0"
+  }
+}

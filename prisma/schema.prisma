@@ -1,0 +1,32 @@
+generator client {
+  provider = "prisma-client-js"
+  previewFeatures = ["tracing"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// Define an Enum for User Roles
+enum Role {
+  Admin
+  User
+  Guest
+}
+
+// Define the User model
+model User {
+  id        Int    @id @default(autoincrement())
+  email     String @unique
+  emailVerified Boolean  @default(false)
+  emailVerificationToken String?
+  emailVerificationTokenExpires  DateTime?
+  password  String
+  name      String
+  passwordChangedAt   DateTime @default(now())
+  passwordResetToken  String?
+  passwordResetExpires DateTime?
+  active              Boolean  @default(true)
+  role      Role   
+}
