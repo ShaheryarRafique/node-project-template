@@ -14,4 +14,11 @@ router.post('/logout', authMiddleware.protect, authController.logout);
 router.post('/resendVerificationEmail', authMiddleware.protect, authController.resendVerificationEmail);
 router.get('/verifyEmail/:token', authMiddleware.protect, authController.verifyEmail);
 
+app.get('/login/google', passport.authenticate('google'));
+app.get('/oauth2/redirect/google',
+  passport.authenticate('google', { failureRedirect: '/login', failureMessage: true }),
+  function(req, res) {
+    res.redirect('/');
+});
+
 module.exports = router;
